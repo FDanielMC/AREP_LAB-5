@@ -13,8 +13,8 @@ Una pequeña aplicación web que emplea el micro-framework de Spark java (http:/
 
 1. Contar con IDE para la ejecución del proyecto o línea de comandos.
 2. Contar con los prerequisitos.
-3. Al tenerlos, ejecutar el siguiente comando en la maquina
-4. 
+3. Tener Docker Desktop
+4. Al tenerlos, ejecutar el siguiente comando en la maquina
 
 ```bash
 git clone https://github.com/FDanielMC/AREP_LAB-5.git
