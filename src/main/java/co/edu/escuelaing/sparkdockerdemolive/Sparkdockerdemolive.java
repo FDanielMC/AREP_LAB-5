@@ -10,11 +10,15 @@ import static spark.Spark.get;
 import static spark.Spark.port;
 
 /**
- *
- * @author daniel.moreno-c
+ * 
+ * @author Daniel Fernando Moreno Cerón
  */
 public class Sparkdockerdemolive {
 
+    /**
+     * Método main en el que se corren todos los servicios REST
+     * @param args 
+     */
     public static void main(String... args) {
         port(getPort());
         get("calculadora", (req, res) -> clientWeb());
@@ -24,13 +28,25 @@ public class Sparkdockerdemolive {
         });
     }
 
-    private static int getPort() {
+    /**
+     * Se establece en cuál puerto correrá el programa
+     * @return Puerto donde correrá el programa
+     */
+    public static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
         }
         return 4567;
     }
 
+    /**
+     * Método que asigna el resultado según el servicio que se requiera
+     * @param query
+     * @return retorna la respuesta según el servicio
+     * @throws InvocationTargetException
+     * @throws NoSuchMethodException
+     * @throws IllegalAccessException 
+     */
     public static String calcule(String query) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
         String outputLine = "";
         String[] commandAndParams = query.split("\\(");
@@ -50,6 +66,11 @@ public class Sparkdockerdemolive {
         return outputLine;
     }
 
+    /**
+     * Calcula la magnitud de un vector de dos dimensiones 
+     * @param array
+     * @return Magnitud del vector
+     */
     public static double vectorMagnitude(double[] array) {
         if (array.length != 2) {
             throw new IllegalArgumentException("El vector es de dos dimensiones");
@@ -60,6 +81,11 @@ public class Sparkdockerdemolive {
         return magnitud;
     }
 
+    /**
+     * Método que verifica si una cadena es palíndroma
+     * @param str
+     * @return booleano convertido a string si es palíndromo o no
+     */
     public static String palindrome(String str) {
         str = str.replaceAll("\\s+", "").toLowerCase();
         boolean isPalindrome = true;
@@ -72,6 +98,15 @@ public class Sparkdockerdemolive {
         return String.valueOf(isPalindrome);
     }
 
+    /**
+     * Método que calcula el sin o cos, según el servicio
+     * @param nmbr
+     * @param command
+     * @return solución de la función seno o coseno
+     * @throws NoSuchMethodException
+     * @throws InvocationTargetException
+     * @throws IllegalAccessException 
+     */
     public static double mathMethods(double nmbr, String command) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         double anguloRadianes = Math.toRadians(nmbr);
         double result = 0.0D;
@@ -84,6 +119,11 @@ public class Sparkdockerdemolive {
         return result;
     }
 
+    /**
+     * Método que retorna los parámetros en caso de que haya más de uno 
+     * @param paramsString
+     * @return arreglo de parámetros
+     */
     public static double[] doubleArrayParams(String paramsString) {
         String params = paramsString.replace(")", "");
         String[] arrayStrings = params.split(",");
@@ -94,6 +134,10 @@ public class Sparkdockerdemolive {
         return array;
     }
 
+    /**
+     * Método que retorna la página principal
+     * @return Página Principal
+     */
     public static String clientWeb() {
         return "<!DOCTYPE html>\n"
                 + "<html>\n"
@@ -149,6 +193,10 @@ public class Sparkdockerdemolive {
                 + "    </body>";
     }
 
+    /**
+     * Método que retorna el cliente js a la página principal
+     * @return cliente js
+     */
     public static String jsClient() {
         return "        <script>\n"
                 + "            function loadGetMsg(command) {\n"
