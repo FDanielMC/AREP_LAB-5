@@ -40,23 +40,24 @@ public class Sparkdockerdemolive {
         } else {
             double[] array = doubleArrayParams(commandAndParams[1]);
             if (command.equals("vem")) {
-                array = new double[]{vectorMagnitude(array)};
+                double magnitude = vectorMagnitude(array);
+                outputLine += String.valueOf(magnitude);
             } else {
-                mathMethods(Double.parseDouble(commandAndParams[1].replace(")", "")), command);
+                double result = mathMethods(Double.parseDouble(commandAndParams[1].replace(")", "")), command);
+                outputLine = String.valueOf(result);
             }
-            outputLine += Arrays.toString(array);
         }
         return outputLine;
     }
 
     public static double vectorMagnitude(double[] array) {
-        int index = 0;
-        double result = 0;
-        for (int i = 0; i < array.length - 1; i += 2) {
-            result = Math.sqrt(Math.pow(array[i], 2) + Math.pow(array[i + 1], 2));
-            index++;
+        if (array.length != 2) {
+            throw new IllegalArgumentException("El vector es de dos dimensiones");
         }
-        return result;
+        double x = array[0];
+        double y = array[1];
+        double magnitud = Math.sqrt(x * x + y * y);
+        return magnitud;
     }
 
     public static String palindrome(String str) {
@@ -72,8 +73,14 @@ public class Sparkdockerdemolive {
     }
 
     public static double mathMethods(double nmbr, String command) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Method method = Math.class.getMethod(command, double.class);
-        double result = (double) method.invoke(null, nmbr);
+        double anguloRadianes = Math.toRadians(nmbr);
+        double result = 0.0D;
+        if(command.equals("sin")){
+            result = Math.sin(anguloRadianes);
+        }
+        else if(command.equals("cos")){
+            result = Math.cos(anguloRadianes);
+        }
         return result;
     }
 
