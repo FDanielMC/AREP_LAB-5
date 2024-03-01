@@ -158,10 +158,60 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
 
 11. Abre un navegador web y accede a la aplicación en http://localhost:35001/calculadora.
 
-
 ## EJECUTAR PRUEBAS
 
 Para ejecutar las pruebas ingrese el siguiente comando en la línea de comandos:
 ```
 mvn test
 ```
+
+## Casos de Prueba
+
+### Prueba EndPoint /calculadora
+
+* Se verificará que el llamado al recurso /calculadora funcione correctamente, tenga en cuenta el puerto en el que se está ejecutando su contenedor:
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/c19033a5-44b6-4f91-84ad-59bb647a4e7d)
+
+* En mi caso es el 35001, por lo tanto debo ir a http://localhost:35001/calculadora
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/c65bfc09-979c-425c-9a81-8f747988ab02)
+
+### Prueba Calculadora
+
+* Se verificará que cada función retorne el resultado correcto.
+
+  **Seno**
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/2a8dbcd2-2ad4-4c95-9f8c-c42d8f7e3af1)
+
+  **Coseno**
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/b75b5fd9-d9f6-4865-be25-c19b4addf5cd)
+
+  **Palíndromo**
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/a8ce4b21-09e6-4f72-8155-2f7b60a6cce7)
+
+  **Magnitud de un Vector**
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/6e484f07-41f1-4919-b39a-195592632384)
+
+## DESARROLLADO CON
+
+* [Java version 15 (Netbeans JDK 15)](https://www.oracle.com/co/java/technologies/downloads/)
+* [Maven](https://maven.apache.org/download.cgi)
+* [Git](https://git-scm.com/downloads)
+* [Docker](https://www.docker.com/products/docker-desktop/)
+
+## Autor
+
+* **Daniel Fernando Moreno Cerón** - [FDanielMC](https://github.com/FDanielMC)
+
+### Licencia
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+### Agradecimientos
+
+Escuela Colombiana de Ingeniería
