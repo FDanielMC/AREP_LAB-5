@@ -42,7 +42,7 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
    - Se utiliza para empaquetar la aplicación en un contenedor estandarizado.
    - El Dockerfile especifica las instrucciones para construir la imagen del contenedor, incluyendo las dependencias y la configuración de la aplicación.
   
-## Ejecución desde el Contenedor del Repositorio
+## Ejecución desde la imágen del Repositorio
 
 1. Instale Docker Desktop.
 2. Revise que no tenga imágenes docker.
@@ -94,6 +94,54 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
 ![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/8c2a9631-4cf2-4c6f-a80d-d4666dc9f7a6)
 
 8. Abre un navegador web y accede a la aplicación en http://localhost:35000/calculadora.
+
+## Generar la Imágen del Proyecto
+
+1. Asegúrate de tener Docker Desktop.
+2. Clone el repositorio:
+   
+    ```
+    git clone 
+    ```
+    
+4. Navega a la carpeta del proyecto:
+   
+    ```
+    cd AREP_LAB-5
+    ```
+    
+6. Construye el proyecto usando Maven:
+   
+    ```
+    mvn clean install 
+    ```
+    
+8. Usando la herramienta de línea de comandos de Docker construye la imagen (Reemplace <nombre> con el nombre que desea darle a la imagen):
+   
+    ```
+    docker build --tag <nombre> .
+    ```
+    
+10. Verifica que la imagen se haya creado correctamente ejecutando el siguiente comando:
+    
+    ```
+    docker images
+    ```
+
+12. Ya si se desea crear un contenedor con la imágen reemplace <nombre-contenedor> y <nombre> con el nombre que desea darle al contenedor y el nombre de la imágen que  dió anteriormente:
+    
+    ```
+    docker run -d -p 35001:46000 --name <nombre-contenedor> <nombre>
+    ```
+    
+14. Asegúrese que el contenedor está corriendo:
+    
+    ```
+    docker ps
+    ```
+
+11. Abre un navegador web y accede a la aplicación en http://localhost:35001/calculadora.
+
 
 ## EJECUTAR PRUEBAS
 
