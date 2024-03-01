@@ -6,13 +6,15 @@ Una pequeña aplicación web que emplea el micro-framework de Spark java (http:/
 
 * [Java (desde la 15 para delante)](https://www.oracle.com/co/java/technologies/downloads/) 
 * [Maven](https://maven.apache.org/download.cgi) 
-* [Git](https://git-scm.com/downloads) 
+* [Git](https://git-scm.com/downloads)
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ### REQUISITOS
 
 1. Contar con IDE para la ejecución del proyecto o línea de comandos.
 2. Contar con los prerequisitos.
 3. Al tenerlos, ejecutar el siguiente comando en la maquina
+4. 
 
 ```bash
 git clone https://github.com/FDanielMC/AREP_LAB-5.git
@@ -30,7 +32,7 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
    - Desarrollado con Spark Java.
    - Define dos endpoints:
        - /calculadora: Muestra la interfaz gráfica inicial.
-       - /ccalcular: Recibe las peticiones del cliente, procesa los datos y devuelve el resultado.
+       - /calcular: Recibe las peticiones del cliente, procesa los datos y devuelve el resultado.
        - Maneja operaciones como:
          - Cálculo de seno y coseno.
          - Verificar si una cadena es un palíndromo.
@@ -38,4 +40,11 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
 
 3. Docker:
    - Se utiliza para empaquetar la aplicación en un contenedor estandarizado.
-   - El Dockerfile especifica las instrucciones para construir la imagen del contenedor, incluyendo las dependencias y la configuración de la aplicación.              
+   - El Dockerfile especifica las instrucciones para construir la imagen del contenedor, incluyendo las dependencias y la configuración de la aplicación.
+
+## EJECUTAR PRUEBAS
+
+Para ejecutar las pruebas ingrese el siguiente comando en la línea de comandos:
+```
+mvn test
+```
