@@ -41,6 +41,59 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
 3. Docker:
    - Se utiliza para empaquetar la aplicación en un contenedor estandarizado.
    - El Dockerfile especifica las instrucciones para construir la imagen del contenedor, incluyendo las dependencias y la configuración de la aplicación.
+  
+## Ejecución desde el Contenedor del Repositorio
+
+1. Instale Docker Desktop.
+2. Revise que no tenga imágenes docker.
+   
+   ```
+   docker images
+   ```
+   
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/f3f51a72-ecec-41cc-b6a1-7634e4021f78)
+
+3. Revise también en Docker Desktop
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/39928bf1-24ff-4ce1-b2ff-94cf6d6e7557)
+
+4. Descargar la imágen desde el repositorio.
+
+    ```
+    docker pull fdanielmc/arep_lab-5:latest
+    ```
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/2117dd65-e9c0-4689-b722-d72354b32ae1)
+
+5. Verifica que la imagen se haya creado correctamente ejecutando el siguiente comando:
+    ```
+    docker images
+    ```
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/86da5032-2166-4c68-a194-ce2d43ff007e)
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/12454af9-633c-4e94-9842-864f75c2d1dc)
+
+6. Cree un nuevo contenedor a partir de la imagen que está en Docker Hub:
+   
+    ```
+    docker run -d -p 35000:46000 --name areplab5 fdanielmc/arep_lab-5
+    ```
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/04de556a-ec15-4b99-a521-9e2f41330d26)
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/cdfc0796-2ef2-4abe-9e41-a1630871e39c)
+
+
+7. Asegúrese que el contenedor está corriendo:
+   
+    ```
+    docker ps
+    ```
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/8c2a9631-4cf2-4c6f-a80d-d4666dc9f7a6)
+
+8. Abre un navegador web y accede a la aplicación en http://localhost:35000/calculadora.
 
 ## EJECUTAR PRUEBAS
 
