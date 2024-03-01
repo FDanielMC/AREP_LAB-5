@@ -101,7 +101,7 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
 2. Clone el repositorio:
    
     ```
-    git clone 
+    git clone https://github.com/FDanielMC/AREP_LAB-5.git
     ```
     
 4. Navega a la carpeta del proyecto:
@@ -109,6 +109,8 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
     ```
     cd AREP_LAB-5
     ```
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/3a039432-eb9b-4404-ad8a-94940a145e37)
     
 6. Construye el proyecto usando Maven:
    
@@ -121,24 +123,38 @@ git clone https://github.com/FDanielMC/AREP_LAB-5.git
     ```
     docker build --tag <nombre> .
     ```
-    
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/49766fdc-6bed-4e70-87b3-4d2b648a11c4)
+
 10. Verifica que la imagen se haya creado correctamente ejecutando el siguiente comando:
     
     ```
     docker images
     ```
 
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/573e0814-1c35-43b8-b850-0cc7fa88cae6)
+
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/e2eb1075-312b-45bb-b488-d4c07c258ca5)
+
+
 12. Ya si se desea crear un contenedor con la imágen reemplace <nombre-contenedor> y <nombre> con el nombre que desea darle al contenedor y el nombre de la imágen que  dió anteriormente:
     
     ```
     docker run -d -p 35001:46000 --name <nombre-contenedor> <nombre>
     ```
-    
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/f5c66245-fec0-42be-8f79-7d628ba77b6d)
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/24bab0f5-3a5d-48fc-80b5-4ac194d8d3d0)
+
 14. Asegúrese que el contenedor está corriendo:
     
     ```
     docker ps
     ```
+
+![image](https://github.com/FDanielMC/AREP_LAB-5/assets/123689924/f3d2a132-1943-4c8c-9747-d6d370f28e02)
 
 11. Abre un navegador web y accede a la aplicación en http://localhost:35001/calculadora.
 
